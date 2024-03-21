@@ -1,6 +1,6 @@
 mixin _$AnnotationsTestClass on AnnotationsTestClassBase, Store {
   late final _$fooAtom =
-      Atom(name: 'AnnotationsTestClassBase.foo', context: context);
+      Atom(name: 'AnnotationsTestClassBase.foo', context: reactiveContext);
 
   @override
   String get foo {
@@ -21,12 +21,12 @@ mixin _$AnnotationsTestClass on AnnotationsTestClassBase, Store {
   @visibleForTesting
   ObservableStream<String> observableStreamAnnotated() {
     final _$stream = super.observableStreamAnnotated();
-    return ObservableStream<String>(_$stream, context: context);
+    return ObservableStream<String>(_$stream, context: reactiveContext);
   }
 
   late final _$asyncActionAnnotatedAsyncAction = AsyncAction(
       'AnnotationsTestClassBase.asyncActionAnnotated',
-      context: context);
+      context: reactiveContext);
 
   @override
   @protected
@@ -39,7 +39,7 @@ mixin _$AnnotationsTestClass on AnnotationsTestClassBase, Store {
 
   late final _$observableFutureAnnotatedAsyncAction = AsyncAction(
       'AnnotationsTestClassBase.observableFutureAnnotated',
-      context: context);
+      context: reactiveContext);
 
   @override
   @protected
@@ -50,8 +50,8 @@ mixin _$AnnotationsTestClass on AnnotationsTestClassBase, Store {
         .run(() => super.observableFutureAnnotated()));
   }
 
-  late final _$AnnotationsTestClassBaseActionController =
-      ActionController(name: 'AnnotationsTestClassBase', context: context);
+  late final _$AnnotationsTestClassBaseActionController = ActionController(
+      name: 'AnnotationsTestClassBase', context: reactiveContext);
 
   @override
   @protected
