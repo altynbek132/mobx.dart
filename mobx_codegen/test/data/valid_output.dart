@@ -14,7 +14,7 @@ mixin _$User on UserBase, Store {
       .value;
 
   late final _$firstNameAtom =
-      Atom(name: 'UserBase.firstName', context: context);
+      Atom(name: 'UserBase.firstName', context: reactiveContext);
 
   @override
   String get firstName {
@@ -30,7 +30,7 @@ mixin _$User on UserBase, Store {
   }
 
   late final _$firstNameNullableAtom =
-      Atom(name: 'UserBase.firstNameNullable', context: context);
+      Atom(name: 'UserBase.firstNameNullable', context: reactiveContext);
 
   @override
   String? get firstNameNullable {
@@ -46,7 +46,7 @@ mixin _$User on UserBase, Store {
   }
 
   late final _$middleNameAtom =
-      Atom(name: 'UserBase.middleName', context: context);
+      Atom(name: 'UserBase.middleName', context: reactiveContext);
 
   @override
   String get middleName {
@@ -61,7 +61,8 @@ mixin _$User on UserBase, Store {
     });
   }
 
-  late final _$lastNameAtom = Atom(name: 'UserBase.lastName', context: context);
+  late final _$lastNameAtom =
+      Atom(name: 'UserBase.lastName', context: reactiveContext);
 
   @override
   String get lastName {
@@ -76,7 +77,8 @@ mixin _$User on UserBase, Store {
     });
   }
 
-  late final _$friendAtom = Atom(name: 'UserBase.friend', context: context);
+  late final _$friendAtom =
+      Atom(name: 'UserBase.friend', context: reactiveContext);
 
   @override
   User get friend {
@@ -92,7 +94,7 @@ mixin _$User on UserBase, Store {
   }
 
   late final _$friendNullableAtom =
-      Atom(name: 'UserBase.friendNullable', context: context);
+      Atom(name: 'UserBase.friendNullable', context: reactiveContext);
 
   @override
   User? get friendNullable {
@@ -107,7 +109,8 @@ mixin _$User on UserBase, Store {
     });
   }
 
-  late final _$callbackAtom = Atom(name: 'UserBase.callback', context: context);
+  late final _$callbackAtom =
+      Atom(name: 'UserBase.callback', context: reactiveContext);
 
   @override
   void Function() get callback {
@@ -123,7 +126,7 @@ mixin _$User on UserBase, Store {
   }
 
   late final _$callbackNullableAtom =
-      Atom(name: 'UserBase.callbackNullable', context: context);
+      Atom(name: 'UserBase.callbackNullable', context: reactiveContext);
 
   @override
   void Function() get callbackNullable {
@@ -139,7 +142,7 @@ mixin _$User on UserBase, Store {
   }
 
   late final _$callback2Atom =
-      Atom(name: 'UserBase.callback2', context: context);
+      Atom(name: 'UserBase.callback2', context: reactiveContext);
 
   @override
   VoidCallback get callback2 {
@@ -155,7 +158,7 @@ mixin _$User on UserBase, Store {
   }
 
   late final _$callback2NullableAtom =
-      Atom(name: 'UserBase.callback2Nullable', context: context);
+      Atom(name: 'UserBase.callback2Nullable', context: reactiveContext);
 
   @override
   VoidCallback? get callback2Nullable {
@@ -171,7 +174,7 @@ mixin _$User on UserBase, Store {
   }
 
   late final _$_testUsersAtom =
-      Atom(name: 'UserBase._testUsers', context: context);
+      Atom(name: 'UserBase._testUsers', context: reactiveContext);
 
   @override
   List<User> get _testUsers {
@@ -189,41 +192,41 @@ mixin _$User on UserBase, Store {
   @override
   ObservableFuture<String> foobar() {
     final _$future = super.foobar();
-    return ObservableFuture<String>(_$future, context: context);
+    return ObservableFuture<String>(_$future, context: reactiveContext);
   }
 
   @override
   ObservableFuture<String?> foobarNullable() {
     final _$future = super.foobarNullable();
-    return ObservableFuture<String?>(_$future, context: context);
+    return ObservableFuture<String?>(_$future, context: reactiveContext);
   }
 
   @override
   ObservableStream<T> loadStuff<T>(String arg1, {T value}) {
     final _$stream = super.loadStuff<T>(arg1, value: value);
-    return ObservableStream<T>(_$stream, context: context);
+    return ObservableStream<T>(_$stream, context: reactiveContext);
   }
 
   @override
   ObservableStream<T?> loadStuffNullable<T>(String arg1, {T value}) {
     final _$stream = super.loadStuffNullable<T>(arg1, value: value);
-    return ObservableStream<T?>(_$stream, context: context);
+    return ObservableStream<T?>(_$stream, context: reactiveContext);
   }
 
   @override
   ObservableStream<String> asyncGenerator() {
     final _$stream = super.asyncGenerator();
-    return ObservableStream<String>(_$stream, context: context);
+    return ObservableStream<String>(_$stream, context: reactiveContext);
   }
 
   @override
   ObservableStream<String> asyncGeneratorNullable() {
     final _$stream = super.asyncGeneratorNullable();
-    return ObservableStream<String>(_$stream, context: context);
+    return ObservableStream<String>(_$stream, context: reactiveContext);
   }
 
   late final _$fetchUsersAsyncAction =
-      AsyncAction('UserBase.fetchUsers', context: context);
+      AsyncAction('UserBase.fetchUsers', context: reactiveContext);
 
   @override
   Future<List<User>> fetchUsers() {
@@ -231,7 +234,7 @@ mixin _$User on UserBase, Store {
   }
 
   late final _$fetchUsersNullableAsyncAction =
-      AsyncAction('UserBase.fetchUsersNullable', context: context);
+      AsyncAction('UserBase.fetchUsersNullable', context: reactiveContext);
 
   @override
   Future<List<User>> fetchUsersNullable() {
@@ -239,8 +242,9 @@ mixin _$User on UserBase, Store {
         .run(() => super.fetchUsersNullable());
   }
 
-  late final _$setAsyncFirstNameNullableAsyncAction =
-      AsyncAction('UserBase.setAsyncFirstNameNullable', context: context);
+  late final _$setAsyncFirstNameNullableAsyncAction = AsyncAction(
+      'UserBase.setAsyncFirstNameNullable',
+      context: reactiveContext);
 
   @override
   Future<void> setAsyncFirstNameNullable() {
@@ -249,7 +253,7 @@ mixin _$User on UserBase, Store {
   }
 
   late final _$setAsyncFirstNameAsyncAction =
-      AsyncAction('UserBase.setAsyncFirstName', context: context);
+      AsyncAction('UserBase.setAsyncFirstName', context: reactiveContext);
 
   @override
   Future<void> setAsyncFirstName() {
@@ -257,7 +261,7 @@ mixin _$User on UserBase, Store {
   }
 
   late final _$setAsyncFirstName2AsyncAction =
-      AsyncAction('UserBase.setAsyncFirstName2', context: context);
+      AsyncAction('UserBase.setAsyncFirstName2', context: reactiveContext);
 
   @override
   ObservableFuture<void> setAsyncFirstName2() {
@@ -265,8 +269,9 @@ mixin _$User on UserBase, Store {
         _$setAsyncFirstName2AsyncAction.run(() => super.setAsyncFirstName2()));
   }
 
-  late final _$setAsyncFirstName2NullableAsyncAction =
-      AsyncAction('UserBase.setAsyncFirstName2Nullable', context: context);
+  late final _$setAsyncFirstName2NullableAsyncAction = AsyncAction(
+      'UserBase.setAsyncFirstName2Nullable',
+      context: reactiveContext);
 
   @override
   ObservableFuture<void> setAsyncFirstName2Nullable() {
@@ -275,7 +280,7 @@ mixin _$User on UserBase, Store {
   }
 
   late final _$UserBaseActionController =
-      ActionController(name: 'UserBase', context: context);
+      ActionController(name: 'UserBase', context: reactiveContext);
 
   @override
   void updateNames({required String firstName, String lastName}) {

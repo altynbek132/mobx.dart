@@ -119,7 +119,7 @@ void main() {
             name: 'fieldName');
         final output = template.toString();
         expect(output, equals("""
-  late final _atomFieldName = Atom(name: 'ParentName.fieldName', context: context);
+  late final _atomFieldName = Atom(name: 'ParentName.fieldName', context: reactiveContext);
 
   @override
   FieldType get fieldName {
@@ -146,7 +146,7 @@ void main() {
         );
         final output = template.toString();
         expect(output, equals("""
-  late final _atomFieldName = Atom(name: 'ParentName._fieldName', context: context);
+  late final _atomFieldName = Atom(name: 'ParentName._fieldName', context: reactiveContext);
 
   FieldType get fieldName {
     _atomFieldName.reportRead();
@@ -340,7 +340,7 @@ void main() {
   @override
   ObservableFuture<T> fetchData<T, S extends String>(T arg1, [S arg2 = "arg2value", String arg3], {String namedArg1 = "default", int namedArg2 = 3}) {
     final _\$future = super.fetchData<T, S>(arg1, arg2, arg3, namedArg1: namedArg1, namedArg2: namedArg2);
-    return ObservableFuture<T>(_\$future, context: context);
+    return ObservableFuture<T>(_\$future, context: reactiveContext);
   }"""));
     });
 
