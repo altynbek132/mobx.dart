@@ -74,3 +74,9 @@ export 'package:mobx/src/core.dart'
 export 'package:mobx/src/core/atom_extensions.dart';
 
 export 'version.dart';
+
+class MobxAsdf {
+  void asdf() {
+    print('asdf');
+  }
+}
