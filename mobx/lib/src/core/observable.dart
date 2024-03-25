@@ -110,6 +110,23 @@ class Observable<T> extends Atom
     return (!areEqual) ? prepared : WillChangeNotification.unchanged;
   }
 
+  /// Reports a manual change to the observable.
+  ///
+  /// This method is used to manually trigger a change notification for the observable.
+  /// It calls the [reportChanged] method to notify any observers that the value has changed.
+  /// It also notifies any registered listeners with a [ChangeNotification] object containing
+  /// the new and old values, the operation type (update), and the object itself.
+  ///
+  /// Ex: can be used to convert ChangeNotifier to Observable.
+  void reportManualChange() {
+    reportChanged();
+    _listeners.notifyListeners(ChangeNotification<T>(
+        newValue: value,
+        oldValue: value,
+        type: OperationType.update,
+        object: this));
+  }
+
   @override
   Dispose observe(Listener<ChangeNotification<T>> listener,
       {bool fireImmediately = false}) {
