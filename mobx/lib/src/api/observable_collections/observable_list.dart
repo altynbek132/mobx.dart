@@ -33,6 +33,11 @@ class ObservableList<T>
       : this._wrap(context, _observableListAtom<T>(context, name),
             List<T>.of(elements, growable: true));
 
+  ObservableList.proxy(List<T> elements,
+      {ReactiveContext? context, String? name})
+      : this._wrap(context ?? mainContext,
+            _observableListAtom<T>(context, name), elements);
+
   ObservableList._wrap(ReactiveContext? context, this._atom, this._list)
       : _context = context ?? mainContext;
 
